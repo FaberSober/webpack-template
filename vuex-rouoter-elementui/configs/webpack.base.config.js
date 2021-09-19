@@ -9,7 +9,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin-webpack5');
 console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
 
 const webpackConfigBase = {
-	entry: [ './src/main.js' ],
+	entry: ['./src/main.js'],
 	output: {
 		path: path.resolve(__dirname, '../dist'),
 		filename: '[name].js',
@@ -100,7 +100,7 @@ const webpackConfigBase = {
 	resolve: {
 		extensions: ['.ts', '.js', '.vue'],
 		alias: {
-		  '@': path.join(__dirname, '../src'),
+	    '@': path.join(__dirname, '../src'),
 		},
 	},
   target: ['web', 'es5'],
