@@ -3,6 +3,8 @@ import { Button, Modal } from 'antd';
 import { CheckCircleOutlined } from '@ant-design/icons';
 import './app.less';
 
+import 'antd/dist/antd.less'
+
 export default function App() {
   const [visible, setVisible] = useState(false)
 

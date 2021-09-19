@@ -82,6 +82,18 @@ const webpackConfigBase = {
 				},
 			},
 			{
+				test: /\.ico|woff|eot|ttf/,
+				type: 'asset',
+				parser: {
+					dataUrlCondition: {
+						maxSize: 10 * 1024,
+					},
+				},
+				generator: {
+					filename: 'font/[base]',
+				},
+			},
+			{
 				test: /\.txt|xlsx/,
 				type: 'asset',
 				generator: {
