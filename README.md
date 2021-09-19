@@ -10,3 +10,4 @@ webpack模版整理
 | react-ts | 主分支：react17+webpack5+sass |
 | react-ts-sass | 主分支：react17+webpack5+sass |
 | react-ts-less | 主分支：react17+webpack5+less |
+| react-ts-less-antd | 主分支：react17+webpack5+less4+antd4 |
