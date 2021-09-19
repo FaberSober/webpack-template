@@ -1,9 +1,9 @@
 {
-  "name": "jmpd-web-vue2",
+  "name": "vuex-rouoter-elementui",
   "version": "1.0.0",
   "main": "main.js",
   "repository": "",
-  "description": "居民配电vue2前端",
+  "description": "vuex-rouoter-elementui",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack",
