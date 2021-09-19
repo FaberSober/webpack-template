@@ -78,7 +78,7 @@ const webpackConfigBase = {
 	plugins: [
 		new MiniCssExtractPlugin(),
 		new HtmlWebpackPlugin({
-			template: '/src/index.html',
+			template: 'src/index.html',
 		}),
 		new Webpack.HotModuleReplacementPlugin(),
 		new CleanWebpackPlugin(),
