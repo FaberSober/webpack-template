@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
 
 const webpackConfigBase = {
-	entry: ['./src/main.jsx'],
+	entry: ['./src/main.tsx'],
 	output: {
 		path: path.resolve(__dirname, '../dist'),
 		filename: '[name].js',
@@ -48,11 +48,27 @@ const webpackConfigBase = {
 				test: /\.js[x]?$/,
 				exclude: /node_modules/,
 				use: [
-					{
-						loader: 'babel-loader',
-					},
+					'thread-loader',
+					'babel-loader',
 				],
 			},
+      {
+        test: /\.ts[x]?$/,
+        use: [
+          'thread-loader',
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+              happyPackMode: true,
+              context: path.resolve(__dirname, '../'),
+              configFile: 'tsconfig.json',
+            },
+          },
+        ],
+        exclude: /node_modules/,
+      },
 			{
 				// webpack5 内置了 asset 模块, 用来代替 file-loader & url-loader & raw-loader 处理静态资源
 				test: /\.png|jpg|gif|jpeg|svg/,
@@ -85,7 +101,7 @@ const webpackConfigBase = {
 		new Webpack.ProvidePlugin({}),
 	],
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', '.jsx', '.ts', '.tsx'],
 		alias: {
 	    '@': path.join(__dirname, '../src'),
 		},
