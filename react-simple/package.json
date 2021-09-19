@@ -10,8 +10,8 @@
     "build": "cross-env NODE_ENV=production webpack",
     "serve": "serve dist",
     "test": "npm run build && npm run serve",
-    "lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx}\" \"src/**/*.jsx\"",
-    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx}\" \"src/**/*.jsx\" ./*.{js,ts}"
+    "lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx}\"",
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx}\" ./*.{js,ts}"
   },
   "husky": {
     "hooks": {
@@ -46,6 +46,7 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.2",
     "html-webpack-plugin": "^5.3.2",
     "husky": "^4.3.6",
     "lint-staged": "^11.1.2",
