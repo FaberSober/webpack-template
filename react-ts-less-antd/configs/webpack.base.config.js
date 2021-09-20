@@ -7,6 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const serverConfig = require('./server.config');
 
 console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
+const devMode = process.env.NODE_ENV !== 'production';
 
 const webpackConfigBase = {
 	entry: ['./src/main.tsx'],
@@ -24,9 +25,14 @@ const webpackConfigBase = {
 			{
 				test: /\.css|less$/,
 				use: [
-					MiniCssExtractPlugin.loader,
-					'css-loader',
-					'postcss-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '/',
+            },
+          }, // 使用mini-css-loader时，不要再使用style-loader
+					{ loader: 'css-loader', options: { sourceMap: true } },
+					{ loader: 'postcss-loader', options: { sourceMap: true } },
 					{
             loader: 'less-loader',
             options: {
@@ -68,48 +74,37 @@ const webpackConfigBase = {
         ],
         exclude: /node_modules/,
       },
-			{
-				// webpack5 内置了 asset 模块, 用来代替 file-loader & url-loader & raw-loader 处理静态资源
-				test: /\.png|jpg|gif|jpeg|svg/,
-				type: 'asset',
-				parser: {
-					dataUrlCondition: {
-						maxSize: 10 * 1024,
-					},
-				},
-				generator: {
-					filename: 'images/[base]',
-				},
-			},
-			{
-				test: /\.ico|woff|eot|ttf/,
-				type: 'asset',
-				parser: {
-					dataUrlCondition: {
-						maxSize: 10 * 1024,
-					},
-				},
-				generator: {
-					filename: 'font/[base]',
-				},
-			},
-			{
-				test: /\.txt|xlsx/,
-				type: 'asset',
-				generator: {
-					filename: 'files/[base]',
-				},
-			},
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        exclude: /node_modules/,
+        include: [path.resolve(__dirname, '../src/assets')],
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+          name: devMode ? '[name].[ext]' : '[name].[hash:4].[ext]',
+          outputPath: 'img',
+        },
+      },
+      {
+        test: /\.(ico|woff|eot|ttf|svg|gif)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+          name: devMode ? '[name].[ext]' : 'font/[name].[hash:4].[ext]',
+          outputPath: 'font',
+        },
+      },
 		],
 	},
 	plugins: [
-		new MiniCssExtractPlugin(),
+		new MiniCssExtractPlugin({
+      // filename: devMode ? '[name].[fullhash:8].css' : '[name].[contenthash].css',
+		}),
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
 		}),
-		new Webpack.HotModuleReplacementPlugin(),
+		// new Webpack.HotModuleReplacementPlugin(),
 		new CleanWebpackPlugin(),
-		new Webpack.ProvidePlugin({}),
 	],
 	resolve: {
 		extensions: ['.js', '.jsx', '.ts', '.tsx'],

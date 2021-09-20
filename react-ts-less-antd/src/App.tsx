@@ -15,6 +15,8 @@ export default function App() {
 				<a href="/about">About</a>
 			</div>
 
+			<div id="image" />
+
 			<Button type="primary" onClick={() => setVisible(true)}>Hello</Button>
 
 			<div>
