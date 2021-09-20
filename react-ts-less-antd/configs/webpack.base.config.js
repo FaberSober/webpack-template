@@ -59,16 +59,11 @@ const webpackConfigBase = {
             //   publicPath: '/img/',
             // },
           }, // 使用mini-css-loader时，不要再使用style-loader
-					{ 
-						loader: 'css-loader', 
-						options: {
-						} 
-					},
-					{ loader: 'postcss-loader', options: { sourceMap: true } },
+					'css-loader',
+					'postcss-loader',
 					{
             loader: 'less-loader',
             options: {
-              sourceMap: true,
               lessOptions: {
                 modifyVars: {
                   // 修改antd主题色

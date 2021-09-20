@@ -8,11 +8,15 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin-webpack5');
 
 console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
 
+const devMode = process.env.NODE_ENV !== 'production';
+
 const webpackConfigBase = {
-	entry: ['./src/main.js'],
+	entry: ['babel-polyfill', './src/main.js'],
 	output: {
 		path: path.resolve(__dirname, '../dist'),
-		filename: '[name].js',
+		assetModuleFilename: 'images/[name].[hash:8][ext][query]',
+    filename: devMode ? 'js/[name].[hash:8].js' : 'js/[name].[contenthash].js',
+    chunkFilename: devMode ? '[name].bundle.[hash:8].js' : '[name].bundle.[contenthash].js',
 		publicPath: '/',
 		environment: {
 			// 是否使用箭头函数
@@ -21,6 +25,23 @@ const webpackConfigBase = {
 	},
   module: {
 		rules: [
+			{
+				test: /\.ts|js$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: 'babel-loader',
+					},
+				],
+			},
+			{
+				test: /\.vue$/,
+				use: [
+					{
+						loader: 'vue-loader',
+					},
+				],
+			},
 			{
 				test: /\.css|sass|scss$/,
 				use: [
@@ -47,23 +68,6 @@ const webpackConfigBase = {
 				],
 			},
 			{
-				test: /\.ts|js$/,
-				exclude: /node_modules/,
-				use: [
-					{
-						loader: 'babel-loader',
-					},
-				],
-			},
-			{
-				test: /\.vue$/,
-				use: [
-					{
-						loader: 'vue-loader',
-					},
-				],
-			},
-			{
 				// webpack5 内置了 asset 模块, 用来代替 file-loader & url-loader & raw-loader 处理静态资源
 				test: /\.png|jpg|gif|jpeg|svg/,
 				type: 'asset',
@@ -80,7 +84,10 @@ const webpackConfigBase = {
 		],
 	},
 	plugins: [
-		new MiniCssExtractPlugin(),
+		new MiniCssExtractPlugin({
+      filename: devMode ? '[name].[hash:8].css' : '[name].[contenthash].css',
+      chunkFilename: devMode ? '[name].[id].[hash:8].css' : '[name].[contenthash].[id].css',
+		}),
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
 		}),
