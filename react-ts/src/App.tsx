@@ -8,6 +8,8 @@ export default function App() {
 				<a href="/">Home</a>
 				<a href="/about">About</a>
 			</div>
+
+			<div id="image" />
 		</div>
 	);
 }

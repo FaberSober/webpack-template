@@ -69,19 +69,13 @@ const webpackConfigBase = {
 				type: 'asset',
 				parser: {
 					dataUrlCondition: {
-						maxSize: 10 * 1024,
+						maxSize: 8 * 1024,
 					},
-				},
-				generator: {
-					filename: 'images/[base]',
 				},
 			},
 			{
 				test: /\.txt|xlsx/,
 				type: 'asset',
-				generator: {
-					filename: 'files/[base]',
-				},
 			},
 		],
 	},

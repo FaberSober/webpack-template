@@ -14,3 +14,12 @@
 	font-weight: bold;
 	color: #20baf7;
 }
+
+#image {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	background-image: url('~@/assets/logo.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
