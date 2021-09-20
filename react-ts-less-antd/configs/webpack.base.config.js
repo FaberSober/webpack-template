@@ -13,7 +13,10 @@ const webpackConfigBase = {
 	entry: ['babel-polyfill', './src/main.tsx'],
 	output: {
 		path: path.resolve(__dirname, '../dist'),
-		filename: '[name].js',
+		assetModuleFilename: 'images/[name].[hash:4][ext][query]',
+		// filename: '[name].[hash:4].js',
+    filename: devMode ? 'js/[name].[hash:8].js' : 'js/[name].[contenthash].js',
+    chunkFilename: devMode ? '[name].bundle.[hash:8].js' : '[name].bundle.[contenthash].js',
 		publicPath: '/',
 		environment: {
 			// 是否使用箭头函数
@@ -56,7 +59,11 @@ const webpackConfigBase = {
             //   publicPath: '/img/',
             // },
           }, // 使用mini-css-loader时，不要再使用style-loader
-					{ loader: 'css-loader', options: { sourceMap: true } },
+					{ 
+						loader: 'css-loader', 
+						options: {
+						} 
+					},
 					{ loader: 'postcss-loader', options: { sourceMap: true } },
 					{
             loader: 'less-loader',
@@ -74,6 +81,11 @@ const webpackConfigBase = {
           },
 				],
 			},
+			{
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+        // More information here https://webpack.js.org/guides/asset-modules/
+        type: "asset",
+      },
 		],
 	},
 	plugins: [
