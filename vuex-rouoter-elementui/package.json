@@ -6,6 +6,7 @@
   "description": "vuex-rouoter-elementui",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve",
+    "vite:dev": "vite --port=8000",
     "build": "cross-env NODE_ENV=production webpack",
     "serve": "serve dist",
     "test": "npm run build && npm run serve",
@@ -60,6 +61,8 @@
     "sass-loader": "^12.1.0",
     "serve": "^12.0.1",
     "style-loader": "^3.2.1",
+    "vite": "^2.5.10",
+    "vite-plugin-vue2": "^1.8.2",
     "vue-eslint-parser": "^7.11.0",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.14",
