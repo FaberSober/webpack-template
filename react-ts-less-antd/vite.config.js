@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 const path = require('path');
-const serverConfig = require('./server.config');
+import serverConfig from './configs/server.config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
