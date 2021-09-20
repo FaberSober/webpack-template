@@ -13,7 +13,7 @@ const webpackConfigBase = {
 	entry: ['babel-polyfill', './src/main.tsx'],
 	output: {
 		path: path.resolve(__dirname, '../dist'),
-		assetModuleFilename: 'images/[name].[hash:4][ext][query]',
+		assetModuleFilename: 'images/[name].[hash:8][ext][query]',
 		// filename: '[name].[hash:4].js',
     filename: devMode ? 'js/[name].[hash:8].js' : 'js/[name].[contenthash].js',
     chunkFilename: devMode ? '[name].bundle.[hash:8].js' : '[name].bundle.[contenthash].js',
@@ -89,7 +89,10 @@ const webpackConfigBase = {
 		],
 	},
 	plugins: [
-		new MiniCssExtractPlugin(),
+		new MiniCssExtractPlugin({
+      filename: devMode ? '[name].[hash:8].css' : '[name].[contenthash].css',
+      chunkFilename: devMode ? '[name].[id].[hash:8].css' : '[name].[contenthash].[id].css',
+		}),
 		new HtmlWebpackPlugin({ template: 'src/index.html' }),
 		new CleanWebpackPlugin(),
 	],
