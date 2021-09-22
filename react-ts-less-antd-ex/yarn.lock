@@ -6310,11 +6310,6 @@ vite-plugin-external@^1.2.3:
   dependencies:
     fs-extra "^10.0.0"
 
-vite-plugin-resolve-externals@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-resolve-externals/-/vite-plugin-resolve-externals-0.1.0.tgz#c121ddec731de4d7e95914346f4dbcae7f315324"
-  integrity sha512-n+ARU1F8834bOtZ/7n8rUmS+LzBROj3/kxxalsT0IZClH73S46xMjhQqBIlCP7+VJ3lUjzxgYyK/4FQwX+iI5w==
-
 vite@^2.5.10:
   version "2.5.10"
   resolved "https://registry.nlark.com/vite/download/vite-2.5.10.tgz#c598e3b5a7e1956ffc52eb3b3420d177fc2ed2a5"
