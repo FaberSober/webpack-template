@@ -7,7 +7,7 @@ const { DEV_SERVER } = require('./server.config.js');
 module.exports = merge(webpackConfigBase, {
   mode: 'development',
   devServer: {
-		open: true,
+		open: false,
 		port: 8888,
 		compress: true,
 		hot: true,

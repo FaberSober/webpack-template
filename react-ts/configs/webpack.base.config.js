@@ -61,7 +61,10 @@ const webpackConfigBase = {
 		],
 	},
 	plugins: [
-		new MiniCssExtractPlugin(),
+		new MiniCssExtractPlugin({
+      filename: devMode ? '[name].[hash:8].css' : '[name].[contenthash].css',
+      chunkFilename: devMode ? '[name].[id].[hash:8].css' : '[name].[contenthash].[id].css',
+		}),
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
 		}),
