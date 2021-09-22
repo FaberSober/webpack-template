@@ -16,3 +16,5 @@ webpack模版整理
 | react-ts-monaco-ie | 主分支：react17+webpack5+react-monaco-editor@0.25.1 |✔|
 | react-ts-amap | 主分支：react17+webpack5+@uiw/react-amap@2.2.6 |❌|
 | react-ts-amap-ie | 主分支：react17+webpack5+amap(官网API script引入) |✔|
+| react-ts-pdfjs-ie | 主分支：react17+webpack5+pdfjs@2.0.943(npm引入) |✔|
+| react-ts-pdfjs-ie-ex | 主分支：react17+webpack5+pdfjs@2.0.943(官网dist文件夹引入) |✔|
