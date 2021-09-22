@@ -22,10 +22,11 @@ const webpackConfigBase = {
   module: {
 		rules: [
 			{
-				test: /\.css$/,
+				test: /\.css|scss|sass$/,
 				use: [
 					MiniCssExtractPlugin.loader,
 					'css-loader',
+					'sass-loader',
 				],
 			},
 			{

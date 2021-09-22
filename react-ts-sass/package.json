@@ -55,6 +55,8 @@
     "lint-staged": "^11.1.2",
     "mini-css-extract-plugin": "^2.3.0",
     "prettier": "^2.4.1",
+    "sass": "^1.42.0",
+    "sass-loader": "^12.1.0",
     "serve": "^12.0.1",
     "style-loader": "^3.2.1",
     "thread-loader": "^3.0.4",
