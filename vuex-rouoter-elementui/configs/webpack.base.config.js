@@ -68,19 +68,10 @@ const webpackConfigBase = {
 				],
 			},
 			{
-				// webpack5 内置了 asset 模块, 用来代替 file-loader & url-loader & raw-loader 处理静态资源
-				test: /\.png|jpg|gif|jpeg|svg/,
-				type: 'asset',
-				parser: {
-					dataUrlCondition: {
-						maxSize: 8 * 1024,
-					},
-				},
-			},
-			{
-				test: /\.txt|xlsx/,
-				type: 'asset',
-			},
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+        // More information here https://webpack.js.org/guides/asset-modules/
+        type: "asset",
+      },
 		],
 	},
 	plugins: [

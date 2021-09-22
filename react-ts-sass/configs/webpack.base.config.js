@@ -7,7 +7,7 @@ console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
 const devMode = process.env.NODE_ENV !== 'production';
 
 const webpackConfigBase = {
-	entry: ['./src/main.tsx'],
+	entry: ['babel-polyfill', './src/main.tsx'],
 	output: {
 		path: path.resolve(__dirname, '../dist'),
 		assetModuleFilename: 'images/[name].[hash:8][ext][query]',

@@ -54,7 +54,6 @@
     "husky": "^4.3.6",
     "lint-staged": "^11.1.2",
     "mini-css-extract-plugin": "^2.3.0",
-    "node-sass": "^6.0.1",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
