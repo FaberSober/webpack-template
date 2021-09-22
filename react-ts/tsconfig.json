@@ -20,5 +20,5 @@
       "@/*": ["src/*"]
     },
   },
-  "include": ["./src", "tsconfig.d.ts"]
+  "include": ["./src", "typed-css.d.ts"]
 }
