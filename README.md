@@ -14,3 +14,4 @@ webpack模版整理
 | react-ts-less-antd | 主分支：react17+webpack5+less4+antd4 |✔|
 | react-ts-monaco | 主分支：react17+webpack5+react-monaco-editor@0.45.0 |❌|
 | react-ts-monaco-ie | 主分支：react17+webpack5+react-monaco-editor@0.25.1 |✔|
+| react-ts-amap | 主分支：react17+webpack5+@uiw/react-amap@2.2.6 |❌|
