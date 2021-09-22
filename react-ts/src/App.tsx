@@ -1,15 +1,15 @@
 import React from 'react';
-import './index.css';
+import styles from './index.module.css';
 
 export default function App() {
 	return (
-		<div id="app">
-			<div id="nav">
+		<div className={styles.app}>
+			<div className={styles.nav}>
 				<a href="/">Home</a>
 				<a href="/about">About</a>
 			</div>
 
-			<div id="image" />
+			<div className={styles.image} />
 		</div>
 	);
 }
