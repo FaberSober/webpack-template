@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MonacoEditor from 'react-monaco-editor';
-import styles from './index.css';
+import styles from './index.module.css';
 
 
 console.log('styles', styles)
