@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const serverConfig = require('./server.config');
 const APP_DIR = path.resolve(__dirname, '../src');
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -23,21 +24,6 @@ const webpackConfigBase = {
 	},
   module: {
 		rules: [
-			{
-				test: /\.css$/,
-				include: APP_DIR,
-				use: [
-					MiniCssExtractPlugin.loader,
-					{
-						loader: 'css-loader',
-						options: {
-							modules: {
-								localIdentName: '[name]__[local]___[hash:base64:5]',
-							},
-						},
-					},
-				],
-			},
 			{
 				test: /\.js[x]?$/,
 				exclude: /node_modules/,
@@ -64,6 +50,45 @@ const webpackConfigBase = {
         exclude: /node_modules/,
       },
 			{
+				test: /\.css|less$/,
+				include: APP_DIR,
+				use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          }, // 使用mini-css-loader时，不要再使用style-loader
+					{
+						loader: 'css-loader',
+						options: {
+							modules: {
+								// 回调必须返回 `local`，`global`，或者 `pure`
+								mode: (resourcePath) => {
+									// 形如xx.module.less的样式，会使用local模块化编译。其他的则返回全局样式
+									if (/\.module\.(css|less)$/i.test(resourcePath)) {
+										return "local";
+									}
+									return "global";
+								},
+								localIdentName: '[name]__[local]___[hash:base64:5]',
+							},
+						},
+					},
+					'postcss-loader',
+					{
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                modifyVars: {
+                  // 修改antd主题色
+                  'primary-color': serverConfig.primaryColor,
+                  'link-color': serverConfig.linkColor,
+                },
+                javascriptEnabled: true,
+              },
+            },
+          },
+				],
+			},
+			{
         test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
         // More information here https://webpack.js.org/guides/asset-modules/
         type: "asset",
@@ -75,9 +100,7 @@ const webpackConfigBase = {
       filename: devMode ? '[name].[hash:8].css' : '[name].[contenthash].css',
       chunkFilename: devMode ? '[name].[id].[hash:8].css' : '[name].[contenthash].[id].css',
 		}),
-		new HtmlWebpackPlugin({
-			template: 'src/index.html',
-		}),
+		new HtmlWebpackPlugin({ template: 'src/index.html' }),
 		new CleanWebpackPlugin(),
 	],
 	resolve: {

@@ -50,6 +50,18 @@ module.exports = merge(webpackConfigBase, {
           chunks: 'all',
           priority: 10, // 需要级别高点
         },
+        router: {
+          test: /[\\/]node_modules[\\/](@reach)[\\/]/,
+          name: 'router',
+          chunks: 'all',
+          priority: 10, // 需要级别高点
+        },
+        antd: {
+          test: /[\\/]node_modules[\\/](antd)[\\/]/,
+          name: 'antd',
+          chunks: 'all',
+          priority: 10, // 需要级别高点
+        },
       },
     },
   },
