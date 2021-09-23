@@ -13,5 +13,5 @@ module.exports = merge(webpackConfigBase, {
 			arrowFunction: false,
 		},
 	},
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
 });
