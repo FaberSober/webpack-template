@@ -1,8 +1,9 @@
-const path = require('path');
 const { merge } = require('webpack-merge');
 
 const webpackConfigBase = require('./webpack.base.config');
 const { DEV_SERVER } = require('./server.config.js');
+
+console.log('[development]process.env.NODE_ENV :>> ', process.env.NODE_ENV);
 
 module.exports = merge(webpackConfigBase, {
   mode: 'development',
