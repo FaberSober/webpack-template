@@ -18,3 +18,5 @@ webpack模版整理
 | react-ts-amap-ie | 主分支：react17+webpack5+amap(官网API script引入) |✔|
 | react-ts-pdfjs-ie | 主分支：react17+webpack5+pdfjs@2.0.943(npm引入) |✔|
 | react-ts-pdfjs-ie-ex | 主分支：react17+webpack5+pdfjs@2.0.943(官网dist文件夹引入) |✔|
+| react-ts-router | 主分支：react17+webpack5+@reach/router |✔|
+| react-ts-router-less-antd | 主分支：react17+webpack5+@reach/router+less4+antd4 |✔|
