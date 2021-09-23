@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
+console.log('process.env.NODE_ENV', process.env.NODE_ENV, 'devMode', devMode)
 
 const APP_DIR = path.resolve(__dirname, '../src');
 const MONACO_DIR = path.resolve(__dirname, '../node_modules/monaco-editor');

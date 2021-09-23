@@ -5,7 +5,8 @@
   "repository": "",
   "description": "vue-simple",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack serve",
+    "start": "npm run vite:dev",
+    "dev": "cross-env NODE_ENV=development webpack serve --mode development",
     "build": "cross-env NODE_ENV=production webpack",
     "serve": "serve dist",
     "lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx}\" \"src/**/*.vue\"",

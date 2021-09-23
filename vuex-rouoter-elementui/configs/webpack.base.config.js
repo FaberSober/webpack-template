@@ -7,6 +7,7 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin-webpack5');
 
 const devMode = process.env.NODE_ENV !== 'production';
+console.log('process.env.NODE_ENV', process.env.NODE_ENV, 'devMode', devMode)s
 
 const webpackConfigBase = {
 	entry: ['babel-polyfill', './src/main.js'],

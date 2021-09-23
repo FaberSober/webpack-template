@@ -5,7 +5,8 @@
   "repository": "",
   "description": "vuex-rouoter-elementui",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack serve",
+    "start": "npm run vite:dev",
+    "dev": "cross-env NODE_ENV=development webpack serve --mode development",
     "vite:dev": "vite --port=8000",
     "build": "cross-env NODE_ENV=production webpack",
     "serve": "serve dist",
