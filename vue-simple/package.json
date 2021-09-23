@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run vite:dev",
     "dev": "cross-env NODE_ENV=development webpack serve --mode development",
-    "build": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
     "serve": "serve dist",
     "lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx}\" \"src/**/*.vue\"",
     "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx}\" \"src/**/*.vue\" ./*.{js,ts}"
