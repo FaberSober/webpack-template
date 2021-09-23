@@ -5,8 +5,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const serverConfig = require('./server.config');
 
-console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
-
 const devMode = process.env.NODE_ENV !== 'production';
 
 const webpackConfigBase = {

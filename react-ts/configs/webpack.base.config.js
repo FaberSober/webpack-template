@@ -7,6 +7,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const APP_DIR = path.resolve(__dirname, '../src');
 
 const devMode = process.env.NODE_ENV !== 'production';
+console.log('process.env.NODE_ENV', process.env.NODE_ENV, 'devMode', devMode)
 
 const webpackConfigBase = {
 	entry: ['babel-polyfill', './src/main.tsx'],

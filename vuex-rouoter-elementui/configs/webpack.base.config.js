@@ -6,8 +6,6 @@ const path = require('path');
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin-webpack5');
 
-console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
-
 const devMode = process.env.NODE_ENV !== 'production';
 
 const webpackConfigBase = {

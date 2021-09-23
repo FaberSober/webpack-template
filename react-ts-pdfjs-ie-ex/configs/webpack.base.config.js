@@ -6,7 +6,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, '../src');
 
-console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
 const devMode = process.env.NODE_ENV !== 'production';
 
 const webpackConfigBase = {
