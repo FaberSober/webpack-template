@@ -27,7 +27,7 @@ module.exports = merge(webpackConfigBase, {
       cacheGroups: {
         default: {
           // 模块缓存规则，设置为false，默认缓存组将禁用
-          minChunks: 2, // 模块被引用>=2次，拆分至vendors公共模块
+          minChunks: 2, // 模块被引用>=5次，拆分至vendors公共模块
           priority: -20, // 优先级
           reuseExistingChunk: true, // 默认使用已有的模块
         },
@@ -61,6 +61,30 @@ module.exports = merge(webpackConfigBase, {
           name: 'antd',
           chunks: 'all',
           priority: 10, // 需要级别高点
+        },
+        antdDesign: {
+          test: /[\\/]node_modules[\\/](@ant-design)[\\/]/,
+          name: 'antdDesign',
+          chunks: 'all',
+          priority: 10, // 需要级别高点
+        },
+        lodash: {
+          test: /[\\/]node_modules[\\/](lodash)[\\/]/,
+          name: 'lodash',
+          chunks: 'all',
+          priority: 10, // 需要级别高点
+        },
+        dayjs: {
+          test: /[\\/]node_modules[\\/](dayjs)[\\/]/,
+          name: 'dayjs',
+          chunks: 'all',
+          priority: 9, // 需要级别高点
+        },
+        rcComponents: {
+          test: /[\\/]node_modules[\\/](rc-picker|rc-trigger|rc-field-form|rc-align)[\\/]/,
+          name: 'rcComponents',
+          chunks: 'all',
+          priority: 9, // 需要级别高点
         },
       },
     },

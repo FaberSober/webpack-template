@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 
 const serverConfig = require('./server.config');
 const APP_DIR = path.resolve(__dirname, '../src');
@@ -102,6 +103,7 @@ const webpackConfigBase = {
 		}),
 		new HtmlWebpackPlugin({ template: 'src/index.html' }),
 		new CleanWebpackPlugin(),
+		new AntdDayjsWebpackPlugin(),
 	],
 	resolve: {
 		extensions: ['.js', '.jsx', '.ts', '.tsx'],
