@@ -78,13 +78,13 @@ module.exports = merge(webpackConfigBase, {
           test: /[\\/]node_modules[\\/](dayjs)[\\/]/,
           name: 'dayjs',
           chunks: 'all',
-          priority: 9, // 需要级别高点
+          priority: 15, // 需要级别高点
         },
         rcComponents: {
-          test: /[\\/]node_modules[\\/](rc-picker|rc-trigger|rc-field-form|rc-align)[\\/]/,
+          test: /[\\/]node_modules[\\/](rc-picker|rc-trigger|rc-field-form|rc-align|rc-util|rc-motion|rc-notification)[\\/]/,
           name: 'rcComponents',
           chunks: 'all',
-          priority: 9, // 需要级别高点
+          priority: 15, // 需要级别高点
         },
       },
     },
