@@ -5,6 +5,7 @@ import styles from './index.module.css';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 // @ts-ignore
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import '@ckeditor/ckeditor5-build-classic/build/translations/zh-cn'
 
 export default function App() {
 
@@ -12,6 +13,9 @@ export default function App() {
 		<div>
 			<CKEditor
 				editor={ ClassicEditor }
+				config={{
+					language: 'zh-cn',
+				}}
 				data="<p>Hello from CKEditor 5!</p>"
 				onReady={(editor:any) => {
 					// You can store the "editor" and use when it is needed.
