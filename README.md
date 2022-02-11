@@ -20,3 +20,8 @@ webpack模版整理
 | react-ts-pdfjs-ie-ex | 主分支：react17+webpack5+pdfjs@2.0.943(官网dist文件夹引入) |✔|
 | react-ts-router | 主分支：react17+webpack5+@reach/router |✔|
 | react-ts-router-less-antd | 主分支：react17+webpack5+@reach/router+less4+antd4 |✔|
+
+
+# 备注
+清理模块下`node_modules`文件夹。
+1. 运行：`node .\clear.js`
