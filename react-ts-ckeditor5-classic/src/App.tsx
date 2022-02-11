@@ -10,9 +10,7 @@ export default function App() {
 
 	return (
 		<div>
-
 			<CKEditor
-				style={{ height: 500 }}
 				editor={ ClassicEditor }
 				data="<p>Hello from CKEditor 5!</p>"
 				onReady={(editor:any) => {
