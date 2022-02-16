@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@babel/runtime": "7.15.4",
+    "@tinymce/tinymce-react": "^3.13.0",
     "babel-polyfill": "6.26.0",
     "core-js": "3.17.3",
     "react": "17.0.2",

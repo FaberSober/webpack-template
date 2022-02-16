@@ -1037,6 +1037,14 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@tinymce/tinymce-react@^3.13.0":
+  version "3.13.0"
+  resolved "https://registry.npmmirror.com/@tinymce/tinymce-react/-/tinymce-react-3.13.0.tgz#51ae6dbaa4076efde3389229d61c38e4533bc5ee"
+  integrity sha512-8+OHYIUP9W5D5z7gknausaG48ovQtEvjcK4c+zpha7QppRVVX0ltaINpo10V6Vb4qj9Jf7ZFfZpMRxxcFL2YvQ==
+  dependencies:
+    prop-types "^15.6.2"
+    tinymce "^5.5.1"
+
 "@types/eslint-scope@^3.7.0":
   version "3.7.1"
   resolved "https://registry.nlark.com/@types/eslint-scope/download/@types/eslint-scope-3.7.1.tgz#8dc390a7b4f9dd9f1284629efce982e41612116e"
@@ -4280,6 +4288,15 @@ progress@^2.0.0:
   resolved "https://registry.nlark.com/progress/download/progress-2.0.3.tgz?cache=0&sync_timestamp=1624607996383&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fprogress%2Fdownload%2Fprogress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha1-foz42PW48jnBvGi+tOt4Vn1XLvg=
 
+prop-types@^15.6.2:
+  version "15.8.1"
+  resolved "https://registry.npmmirror.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
+  integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.13.1"
+
 prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.nlark.com/prop-types/download/prop-types-15.7.2.tgz?cache=0&sync_timestamp=1624607969118&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fprop-types%2Fdownload%2Fprop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
@@ -4386,7 +4403,7 @@ react-dom@17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-is@^16.8.1:
+react-is@^16.13.1, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.nlark.com/react-is/download/react-is-16.13.1.tgz?cache=0&sync_timestamp=1631895360197&other_urls=https%3A%2F%2Fregistry.nlark.com%2Freact-is%2Fdownload%2Freact-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
@@ -5186,6 +5203,11 @@ thunky@^1.0.2:
   version "1.1.0"
   resolved "https://registry.nlark.com/thunky/download/thunky-1.1.0.tgz#5abaf714a9405db0504732bbccd2cedd9ef9537d"
   integrity sha1-Wrr3FKlAXbBQRzK7zNLO3Z75U30=
+
+tinymce@^5.5.1:
+  version "5.10.3"
+  resolved "https://registry.npmmirror.com/tinymce/-/tinymce-5.10.3.tgz#9485cf00159fd70c4948cb5e9dd49bce2a775899"
+  integrity sha512-O59ssHNnujWvSk5Gt8hIGrdNCMKVWVQv9F8siAgLTRgTh0t3NDHrP1UlLtCxArUi9DPWZvlBeUz8D5fJTu7vnA==
 
 to-fast-properties@^2.0.0:
   version "2.0.0"
