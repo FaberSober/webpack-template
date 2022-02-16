@@ -14,12 +14,13 @@ export default function App() {
 	};
 
 	return (
-		<div>
+		<div style={{ paddingTop: 60 }}>
 			<Editor
 				tinymceScriptSrc="/plugins/tinymce_5.10.3/tinymce/js/tinymce/tinymce.min.js"
 				onInit={(evt, editor) => editorRef.current = editor}
 				initialValue="<p>This is the initial content of the editor.</p>"
 				init={{
+					// inline: true,
 					height: 500,
 					menubar: false,
 					plugins: [
