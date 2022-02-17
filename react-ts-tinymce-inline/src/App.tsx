@@ -26,6 +26,7 @@ export default function App() {
 							inline: true,
 							height: 500,
 							menubar: false,
+							language: 'zh_CN',
 							plugins: [
 								'advlist autolink lists link image imagetools charmap print preview anchor',
 								'searchreplace visualblocks code fullscreen',
