@@ -36,7 +36,14 @@ export default function App() {
 					'link unlink image code table charmap | searchreplace visualblocks removeformat wordcount | help',
 					contextmenu: 'link image imagetools table configurepermanentpen',
 					image_advtab: true,
-					content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+					// content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+					font_formats: '黑体=SimHei; 宋体=SimSun; 微软雅黑=Microsoft YaHei; 仿宋=FangSong; 楷体=KaiTi;' + 
+												'Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,' + 
+												'avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif;' + 
+												'Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica;' + 
+												'Impact=impact,chicago; Symbol=symbol; Tahoma=tahoma,arial,helvetica,sans-serif;' +
+												'Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva;' + 
+												'Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats',
 					/* enable title field in the Image dialog*/
 					image_title: true,
 					/* enable automatic uploads of images represented by blob or data URIs*/
