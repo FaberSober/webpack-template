@@ -28,12 +28,14 @@ export default function App() {
 						'advlist autolink lists link image imagetools charmap print preview anchor',
 						'searchreplace visualblocks code fullscreen',
 						'insertdatetime table paste help wordcount',
-						'colorpicker textcolor contextmenu',
+						'colorpicker textcolor contextmenu quickbars',
 					],
 					toolbar: 'undo redo | formatselect | fontselect | fontsizeselect | ' +
 					'bold italic underline strikethrough | backcolor | alignleft aligncenter ' +
 					'alignright alignjustify | bullist numlist | outdent indent blockquote | ' +
 					'link unlink image code table charmap | searchreplace visualblocks removeformat wordcount | help',
+					contextmenu: 'link image imagetools table configurepermanentpen',
+					image_advtab: true,
 					content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
 					/* enable title field in the Image dialog*/
 					image_title: true,
