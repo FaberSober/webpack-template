@@ -6,6 +6,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, '../src');
 
+const ICON_PARK_DIR = path.resolve(__dirname, '../node_modules/@icon-park');
+
 const devMode = process.env.NODE_ENV !== 'production';
 console.log('process.env.NODE_ENV', process.env.NODE_ENV, 'devMode', devMode)
 
@@ -39,6 +41,11 @@ const webpackConfigBase = {
 					},
 				],
 			},
+      {
+        test: /\.css$/,
+        include: ICON_PARK_DIR,
+        use: ['style-loader', 'css-loader'],
+      },
 			{
 				test: /\.js[x]?$/,
 				exclude: /node_modules/,
