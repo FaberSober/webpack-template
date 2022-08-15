@@ -4,12 +4,9 @@ import styles from './index.module.css';
 export default function App() {
 	return (
 		<div className={styles.app}>
-			<div className={styles.nav}>
-				<a href="/">Home</a>
-				<a href="/about">About</a>
+			<div style={{ width: 800, height: 400 }}>
+				<iframe width="100%" height="100%" src={`/plugins/pdfjs/pdfjs-2.9.359-legacy-dist/web/viewer.html?file=/test.pdf`} />
 			</div>
-
-			<div className={styles.image} />
 		</div>
 	);
 }
