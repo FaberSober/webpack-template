@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CronEditor } from 'fa-cron-react-editor';
+
+import 'fa-cron-react-editor/dist/index.css'
 import styles from './index.module.css';
 
 export default function App() {
-	return (
-		<div className={styles.app}>
-			<div className={styles.nav}>
-				<a href="/">Home</a>
-				<a href="/about">About</a>
-			</div>
+	const [cron, setCron] = useState<string>('* * * * * ?');
 
-			<div className={styles.image} />
+    return (
+        <div>
+			<CronEditor 
+				value={cron}
+				onChange={setCron}
+			/>
+
+			<div>cron: {cron}</div>
 		</div>
-	);
+    );
 }
